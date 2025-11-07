@@ -107,7 +107,7 @@ You can view detailed test logs and Allure results in the Actions tab on GitHub.
 
 👩‍💻 Author
 
-Developed by Mohammed alhaj mohammed
+Developed by Mohammed Alhaj Mohammed
 💼 Software Test Engineer passionate about automation, scalability, and continuous integration.
 
 
