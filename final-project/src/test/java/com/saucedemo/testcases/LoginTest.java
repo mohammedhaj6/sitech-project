@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
                 .load()
                 .loginWithValidUsernameAndPassword(ConfigUtils.getInstance().getValidUsername(), ConfigUtils.getInstance().getValidPassword());
 
-        Assert.assertEquals(getDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
+        Assert.assertEquals(getDriver().getCurrentUrl(), ConfigUtils.getInstance().getMainPageUrl());
 
     }
 }

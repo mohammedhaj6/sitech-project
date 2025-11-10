@@ -37,6 +37,14 @@ public class ConfigUtils {
 
     }
 
+    public String getMainPageUrl() {
+        String prop = properties.getProperty("main-page-url");
+        if (prop != null) return prop;
+        throw new RuntimeException("Could not find the main page url in the properties file");
+
+
+    }
+
     public String getValidUsername() {
         String prop = properties.getProperty("valid-username");
         if (prop != null) return prop;

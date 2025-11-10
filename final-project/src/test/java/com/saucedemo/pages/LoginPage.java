@@ -2,20 +2,17 @@ package com.saucedemo.pages;
 
 import com.saucedemo.utils.ConfigUtils;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(id = "user-name")
-    private WebElement usernameInput;
-    @FindBy(id = "password")
-    private WebElement passwordInput;
-    @FindBy(id = "login-button")
-    private WebElement loginBtn;
-    @FindBy(css = "h3[data-test='error']")
-    private WebElement errorMsg;
+    private final By usernameInput = By.id("user-name");
+    private final By passwordInput = By.id("password");
+    private final By loginBtn = By.id("login-button");
+    private final By errorMsg = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -29,23 +26,22 @@ public class LoginPage extends BasePage {
 
     @Step
     public LoginPage loginWithInvalidUsernameAndPassword(String username, String password) {
-        usernameInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        loginBtn.click();
+        find(usernameInput).sendKeys(username);
+        find(passwordInput).sendKeys(password);
+        find(loginBtn).click();
         return this;
     }
 
     @Step
     public MainPage loginWithValidUsernameAndPassword(String username, String password) {
-        usernameInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        loginBtn.click();
+        find(usernameInput).sendKeys(username);
+        find(passwordInput).sendKeys(password);
+        find(loginBtn).click();
         return new MainPage(driver);
     }
 
     @Step
     public boolean isErrorMassageDisplayed() {
-        return errorMsg.isDisplayed();
-
+        return find(errorMsg).isDisplayed();
     }
 }
