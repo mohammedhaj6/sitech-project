@@ -40,7 +40,7 @@ public class DriverFactory {
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         return driver;
     }
 }
